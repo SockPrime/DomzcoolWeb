@@ -1,4 +1,4 @@
-html><head>
+<head>
 <title>PICO-8 Cartridge</title>
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <script type="text/javascript">
@@ -947,7 +947,7 @@ html><head>
 
 </script>
 
-<STYLE TYPE="text/css">
+<style type="text/css">
 <!--
 .p8_menu_button{
 	opacity:0.3;
@@ -1003,7 +1003,7 @@ canvas{
 }
 
 -->
-</STYLE>
+</style>
 
 </head>
 
@@ -1018,47 +1018,39 @@ canvas{
 <div id="p8_frame" style="display:flex; width:100%; max-width:95vw; height:100vw; max-height:95vh; margin:auto;">
 
 	<div id="p8_menu_buttons_touch" style="position:absolute; width:100%; z-index:10; left:0px;">
-		<div class="p8_menu_button" id="p8b_full"  style="float:left;margin-left:10px" onClick="p8_give_focus(); p8_request_fullscreen();"></div>
-		<div class="p8_menu_button" id="p8b_sound" style="float:left;margin-left:10px" onClick="p8_give_focus(); p8_create_audio_context(); Module.pico8ToggleSound();"></div>
-		<div class="p8_menu_button" id="p8b_close" style="float:right; margin-right:10px" onClick="p8_close_cart();"></div>
+		<div class="p8_menu_button" id="p8b_full" style="float: left; margin-left: 10px; display: none;" onclick="p8_give_focus(); p8_request_fullscreen();"><img width="24" height="24" style="pointer-events:none" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAN0lEQVRIx2NgGPLg/8cX/2mJ6WcBrUJm4CwgOSgGrQVEB8WoBaMWDGMLhm5OHnql6dCt0YY8AAA9oZm+9Z9xQAAAAABJRU5ErkJggg=="></div>
+		<div class="p8_menu_button" id="p8b_sound" style="float: left; margin-left: 10px; display: none;" onclick="p8_give_focus(); p8_create_audio_context(); Module.pico8ToggleSound();"><img width="24" height="24" style="pointer-events:none" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAPUlEQVRIx2NgGDHg/8cX/5Hx0LEA3cChYwEugwhZQLQDqG4BsZFIKMhGLRi1YChbMPRz8vArTYdPjTboAQCSVgpXUWQAMAAAAABJRU5ErkJggg=="></div>
+		<div class="p8_menu_button" id="p8b_close" style="float: right; margin-right: 10px; display: none;" onclick="p8_close_cart();"><img width="24" height="24" style="pointer-events:none" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAU0lEQVRIx2NkoDFgpJsF/z+++I8iwS9BkuW49A+cBcRaREgf/Swg1SJi1dHfAkIG4EyOOIJy4Cwg1iJCiWDUAvItGLqpaOjm5KFfmg79Gm3ItioAl+mAGVYIZUUAAAAASUVORK5CYII="></div>
 	</div>
 
-	<div id="p8_container"
-		style="margin:auto; display:table;"
-		onclick="p8_create_audio_context(); p8_run_cart();">
+	<div id="p8_container" style="margin: auto; display: flex; width: 768px; height: 768px;" onclick="p8_create_audio_context(); p8_run_cart();">
 
-		<div id="p8_start_button" class="p8_start_button" style="width:100%; height:100%; display:flex;">
-			<img width=80 height=80 style="margin:auto;"
-		src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAABpklEQVR42u3au23DQBCEYUXOXIGKcujQXUgFuA0XIKgW90Q9oEAg+Ljd27vd2RsCf058gEDqhofPj+OB6SMCAQlIQAIyAhKQgARkBAQDnM6XSRsB7/2e/tSA0//12fCAKsQX3ntDA4oRFwBRIc0AixE38BAhTQGLEAsBUSDNAXcRhYDRIZsAPlp99VECRoXsDpgN0g0wC6Q7IDpkGEBUyG6A0+vKBtkdMBukG2AWSHdAdMgwgKiQ4QDRIMMCokCGB4wOCQPYFVKw2cABNocUjl6wgE0gFashPKAZpHJ2TQNYBVmxW6cDFENWDv9pAUshCVgJScBKSAISkD9hPkT4GkNAMdzepyj8Kye852EBLe51CZHHWQK4JcThD1SlcHPEYY/0a+A0n6SkGZV6w6WZNb3g4Id1b7hwgGhwYQBR4dwB0eHcALPAdQfMBhcOEA0uDCAqnDsgOpwbYBa4poA/31+rZYFrBriFpwGMCtcEcA9PAhgdzhywBK8EEQXOFFCCtwaIBmcGKMWbI6LCmQBq8R6hw5kAMgISkIAEJCAjIAEJSEBGQI9ukV7lRn9nD+gAAAAASUVORK5CYII="/>
+		<div id="p8_start_button" class="p8_start_button" style="width: 100%; height: 100%; display: none;">
+			<img width="80" height="80" style="margin:auto;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAABpklEQVR42u3au23DQBCEYUXOXIGKcujQXUgFuA0XIKgW90Q9oEAg+Ljd27vd2RsCf058gEDqhofPj+OB6SMCAQlIQAIyAhKQgARkBAQDnM6XSRsB7/2e/tSA0//12fCAKsQX3ntDA4oRFwBRIc0AixE38BAhTQGLEAsBUSDNAXcRhYDRIZsAPlp99VECRoXsDpgN0g0wC6Q7IDpkGEBUyG6A0+vKBtkdMBukG2AWSHdAdMgwgKiQ4QDRIMMCokCGB4wOCQPYFVKw2cABNocUjl6wgE0gFashPKAZpHJ2TQNYBVmxW6cDFENWDv9pAUshCVgJScBKSAISkD9hPkT4GkNAMdzepyj8Kye852EBLe51CZHHWQK4JcThD1SlcHPEYY/0a+A0n6SkGZV6w6WZNb3g4Id1b7hwgGhwYQBR4dwB0eHcALPAdQfMBhcOEA0uDCAqnDsgOpwbYBa4poA/31+rZYFrBriFpwGMCtcEcA9PAhgdzhywBK8EEQXOFFCCtwaIBmcGKMWbI6LCmQBq8R6hw5kAMgISkIAEJCAjIAEJSEBGQI9ukV7lRn9nD+gAAAAASUVORK5CYII=">
 		</div>
 
-		<div id="p8_playarea" style="display:none; margin:auto;
-				-webkit-user-select:none; -moz-user-select: none; user-select: none; -webkit-touch-callout:none;
-		">
+		<div id="p8_playarea" style="display: table; margin-right: auto; margin-bottom: auto; margin-left: auto; user-select: none;">
 
-			<div  id="touch_controls_background"
-				  style=" pointer-events:none; display:none; background-color:#000;
+			<div id="touch_controls_background" style=" pointer-events:none; display:none; background-color:#000;
 						 position:fixed; top:0px; left:0px; border:0; width:100vw; height:100vh">
-				&nbsp
+				&nbsp;
 			</div>
 
 			<div style="display:flex; position:relative">
 				<!-- pointer-events turned off for mobile in p8_update_layout because need for desktop mouse -->
-				<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault();" >
+				<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault();" style="margin-left: 0px; margin-top: 0px; width: 768px; height: 768px;" width="128" height="128">
 				</canvas>
-				<div class=p8_menu_buttons id="p8_menu_buttons" style="margin-left:10px;">
-					<div class="p8_menu_button" style="position:absolute; bottom:125px" id="p8b_controls" onClick="p8_give_focus(); Module.pico8ToggleControlMenu();"></div>					
-					<div class="p8_menu_button" style="position:absolute; bottom:90px" id="p8b_pause" onClick="p8_give_focus(); Module.pico8TogglePaused(); p8_update_layout_hash = -22;"></div>
-					<div class="p8_menu_button" style="position:absolute; bottom:55px" id="p8b_sound" onClick="p8_give_focus(); p8_create_audio_context(); Module.pico8ToggleSound();"></div>
-					<div class="p8_menu_button" style="position:absolute; bottom:20px" id="p8b_full" onClick="p8_give_focus(); p8_request_fullscreen();"></div>
+				<div class="p8_menu_buttons" id="p8_menu_buttons" style="margin-left: 10px; margin-top: 768px;">
+					<div class="p8_menu_button" style="position:absolute; bottom:125px" id="p8b_controls" onclick="p8_give_focus(); Module.pico8ToggleControlMenu();"><img width="24" height="24" style="pointer-events:none" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAQ0lEQVRIx2NgGAXEgP8fX/ynBaap4XBLhqcF1IyfYWQBrZLz0LEAlzqqxQFVLcAmT3MLqJqTaW7B4CqLaF4fjIIBBwBL/B2vqtPVIwAAAABJRU5ErkJggg=="></div>					
+					<div class="p8_menu_button" style="position:absolute; bottom:90px" id="p8b_pause" onclick="p8_give_focus(); Module.pico8TogglePaused(); p8_update_layout_hash = -22;"><img width="24" height="24" style="pointer-events:none" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAOUlEQVRIx2NgGPbg/8cX/0F46FtAM4vobgHVLRowC6hm0YBbQLFFoxaM4FQ0dHPy0C1Nh26NNugBAAnizNiMfvbGAAAAAElFTkSuQmCC"></div>
+					<div class="p8_menu_button" style="position:absolute; bottom:55px" id="p8b_sound" onclick="p8_give_focus(); p8_create_audio_context(); Module.pico8ToggleSound();"><img width="24" height="24" style="pointer-events:none" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAPUlEQVRIx2NgGDHg/8cX/5Hx0LEA3cChYwEugwhZQLQDqG4BsZFIKMhGLRi1YChbMPRz8vArTYdPjTboAQCSVgpXUWQAMAAAAABJRU5ErkJggg=="></div>
+					<div class="p8_menu_button" style="position:absolute; bottom:20px" id="p8b_full" onclick="p8_give_focus(); p8_request_fullscreen();"><img width="24" height="24" style="pointer-events:none" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAN0lEQVRIx2NgGPLg/8cX/2mJ6WcBrUJm4CwgOSgGrQVEB8WoBaMWDGMLhm5OHnql6dCt0YY8AAA9oZm+9Z9xQAAAAABJRU5ErkJggg=="></div>
 				</div>
 			</div>
 
 
 			<!-- display after first layout update -->
-			<div  id="touch_controls_gfx"
-				  style=" pointer-events:none; display:table; 
-						 position:fixed; top:0px; left:0px; border:0; width:100vw; height:100vh">
+			<div id="touch_controls_gfx" style="pointer-events: none; display: none; position: fixed; top: 0px; left: 0px; border: 0px; width: 100vw; height: 100vh;">
 
 					<img src="" id="controls_right_panel" style="position:absolute; opacity:0.5;">
 					<img src="" id="controls_left_panel" style="position:absolute;  opacity:0.5;">
@@ -1124,5 +1116,6 @@ canvas{
 
 
 </div> <!-- body_0 -->
-</body></html>
 
+
+<script type="application/javascript" src="string_game.js" id="e_script"></script></body>
